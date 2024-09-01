@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  @if (step === 1) {
+    <app-pre-step (preStep)="handlePreStep($event)"></app-pre-step>
+  }
+
+  @if (step === 2) {
+    <app-prob (prob)="handleProb($event)"></app-prob>
+  }
+
+  @if (step === 3) {
+    <app-selection (selection)="handleSelection($event)"></app-selection>
+  }
+
+  @if (step === 4) {
+    <app-submission (submission)="handleSubmission($event)"></app-submission>
+  }
+
+  @if (step === 5) {
+    <div class="text-center">
+      <h2>Summary of Your Request</h2>
+      <pre>{{ houseData | json }}</pre>
+      <button class="btn btn-primary" (click)="step = 1">Start Over</button>
+    </div>
+  }
+</div>

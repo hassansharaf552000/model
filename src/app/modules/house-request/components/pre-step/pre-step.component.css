@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #333;
+}
+
+label {
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+label:hover {
+  border-color: #007bff;
+}
+
+input[type="checkbox"]:checked+label {
+  border-color: #007bff;
+
+}
+
+.icon {
+  font-size: 20px;
+  color: #bebebee8;
+  display: flex;
+  justify-content: end;
+  padding-left: 10px;
+}
+
+.right {
+  background-image: url("../../../../../../public/Rectangle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+#startButton {
+
+  width: 30%;
+}
+
+.btton {
+  text-align: end;
+  padding: 10px;
+
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #777777;
+}
+
+#projectNameContainer label {
+  font-weight: 700;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+#projectNameContainer {
+  border-top: #b8b8b8d7 solid 1px;
+
+}

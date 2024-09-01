@@ -1,0 +1,158 @@
+<div class="container mt-5 text-center">
+  <!-- Step 1: Location Selection -->
+  <div id="prob">
+
+    @if (step === 1) {
+    <div class="icon ">
+      <div>
+        <i [routerLink]="['/house/pre-step']" class="fas fa-window-close "></i>
+      </div>
+      <div>
+        <a [routerLink]="['/house/pre-step']" class="back-link">العودة
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+    <div>
+      <div class="my-2" id="parent">
+        <h1>
+          اختر المكان المفضل لسكنك
+
+          <span class="sparkle">✦</span>
+
+
+        </h1>
+        <p>
+          <span class="sparkle">✦</span>
+
+          قم بإختيار مصدر دخلك للسكنية، كل الخيارات التالية ستستكمل باقي الخطوات
+
+        </p>
+      </div>
+      <div class="row justify-content-center my-3">
+        <div class="col-md-3 mb-4">
+          <div class="card text-center h-100 card-container p-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="location" id="dahab" [(ngModel)]="selectedLocation"
+                value="dahab">
+              <label class="form-check-label card-label" for="dahab">
+                <img src="dahb.png" alt="دهب" class="mb-2">
+                <div>دهب</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4 ">
+          <div class="card text-center h-100 card-container p-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="location" id="northCoast"
+                [(ngModel)]="selectedLocation" value="northCoast">
+              <label class="form-check-label card-label" for="northCoast">
+                <img src="sahel.png" alt="الساحل الشمالي" class="mb-2">
+                <div>الساحل الشمالي</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4 ">
+          <div class="card text-center h-100 card-container p-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="location" id="cairo" [(ngModel)]="selectedLocation"
+                value="cairo">
+              <label class="form-check-label card-label" for="cairo">
+                <img src="cairo.png" alt="القاهرة" class="mb-2">
+                <div>القاهرة</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="startButton btn btn-primary  mt-5 p-2" [disabled]="!selectedLocation" (click)="nextStep()">ابدأ
+        الآن <i class="fa-solid fa-arrow-right-to-bracket "></i></button>
+      <p class="text-muted mt-4">نحن هنا لمساعدتك في أختيار منزلك بسهولة وعناية</p>
+      <p class="text-muted ">قم بالضغط على زر "بدء" للبدء في العملية، واتبع التوجيهات لإدخال معلومات الحملة</p>
+    </div>
+    }
+  </div>
+  <!-- Step 2: Home Type Selection -->
+  <div id="prob-child">
+
+    @if (step === 2) {
+    <div class="icon">
+      <div>
+        <i [routerLink]="['/house/pre-step']" class="fas fa-window-close "></i>
+      </div>
+      <div>
+        <a [routerLink]="['/house/pre-step']" class="back-link">العودة
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+    <div>
+      <div class="my-2">
+        <h1>
+          اختر نوع المنزل
+          <span class="sparkle">✦</span>
+
+
+        </h1>
+        <p>
+          <span class="sparkle">✦</span>
+
+          قم بإختيار مصدر دخلك للسكنية لكي تستكمل باقى الخطوات
+
+        </p>
+      </div>
+
+      <div class="row justify-content-center my-3">
+        <div class="col-md-3 mb-4">
+          <div class="card text-center h-100 card-container py-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="homeType" id="apartment"
+                [(ngModel)]="selectedHomeType" value="apartment">
+              <label class="form-check-label card-label" for="apartment">
+                <img src="shaaa.png" alt="شقة سكنية" class="mb-2">
+                <div>شقة سكنية</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center h-100 card-container py-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="homeType" id="duplex" [(ngModel)]="selectedHomeType"
+                value="duplex">
+              <label class="form-check-label card-label" for="duplex">
+                <img src="doplex.png" alt="شقة دوبليكس" class="mb-2">
+                <div>شقة دوبليكس</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card text-center h-100 card-container py-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <input class="form-check-input " type="radio" name="homeType" id="villa" [(ngModel)]="selectedHomeType"
+                value="villa">
+              <label class="form-check-label card-label" for="villa">
+                <img src="villa.png" alt="فيلا" class="mb-2">
+                <div>فيلا</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="startButton btn btn-primary p-1 mt-5" [disabled]="!selectedHomeType" (click)="nextStep()"
+        [routerLink]="['/house/selection']">
+        التالي
+      </button>
+      <p class="text-muted mt-4 ">نحن هنا لمساعدتك في أختيار منزلك بسهولة وعناية</p>
+      <p class="text-muted ">قم بالضغط على زر "بدء" للبدء في العملية، واتبع التوجيهات لإدخال معلومات الحملة</p>
+    </div>
+    }
+  </div>
+
+
+</div>

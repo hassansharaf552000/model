@@ -1,0 +1,68 @@
+<div class="container-fluid " dir="rtl" id="pre-step">
+
+  <div class="row">
+
+    <div class="col-lg-6 right" dir="rtl">
+      <div class="p-3">
+        <div class="text pt-2">
+          <img class="px-3 " src="cone.png" alt="">تهيئة الحملات الإعلانية
+        </div>
+        <h2 class="mt-2">مرحباً بك في منصة أختيار عقارات سكنية للتعمير</h2>
+        <p class="text-muted ps-3">قم بإضافة عملائك الحاليين إلي نظامك الجديد لتبدأ التجربة. قم بإضافة عملائك الحاليين
+          إلي نظامك الجديد لتبدأ
+          التجربة</p>
+        <span class="pt-3 d-block"><img class="px-2" src="correct.png" alt=""> قم بتحميل شعارك وتفاصيل علامتك
+          التجارية</span>
+        <span class="pt-3 d-block"><img class="px-2" src="correct.png" alt=""> اختر وخصص الحقول التي تحتاجها
+        </span>
+        <span class="pt-3 d-block"><img class="px-2" src="correct.png" alt=""> اختر موضوعاً وصمم مظهر استمارتك
+        </span>
+        <span class="pt-3 d-block"><img class="px-2" src="correct.png" alt=""> ضبط رسالة شكر وإجراءات المتابعة
+        </span>
+      </div>
+    </div>
+    <div class="col-lg-6  ">
+      <div class="p-4 text-end d-flex flex-column h-100" dir="rtl">
+        <h2 class="mb-1">طريقة بناء الحملة الخاصة بك</h2>
+        <p>الطريقة المختارة لطريقة إنشاء رسالة الحملة</p>
+        <div class="con mb-1 ">
+          <input type="radio" id="manual" name="campaign" [(ngModel)]="selectedOption" value="manual" class="d-none">
+          <label for="manual" class="d-flex align-items-center border p-3 rounded-3"
+            [ngClass]="{'border-success': selectedOption === 'manual'}">
+            <div>
+              <img src="write.png" alt="إنشاء يدوي" class="mb-1" width="30" height="30">
+              <h5 class="mb-1">إنشاء يدوي</h5>
+              <p class="mb-0 text-muted">قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك بعناية.</p>
+            </div>
+          </label>
+        </div>
+        <div class="cont w-100">
+          <input type="radio" id="ai" name="campaign" [(ngModel)]="selectedOption" value="ai" class="d-none">
+          <label for="ai" class="d-flex align-items-center border p-3 rounded-3"
+            [ngClass]="{'border-success': selectedOption === 'ai'}">
+            <div>
+              <img src="ai.png" alt="إنشاء عبر الذكاء الاصطناعي" class="mb-1" width="30" height="30">
+              <h5 class=>إنشاء عبر الذكاء الاصطناعي</h5>
+              <p class=" text-muted">قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك بعناية.</p>
+            </div>
+          </label>
+        </div>
+        @if (selectedOption === 'manual') {
+        <div id="projectNameContainer" class="mb-1">
+
+          <label for="project-name" class="form-label f-bold">قم بتسمية مشروع إختيار</label>
+          <p class="text-muted">أسم مشروعك يجب ان يكون مميز وواضح</p>
+          <input type="text" id="project-name" class="form-control" placeholder="أسم مشروع مقترح">
+        </div>
+        }
+      </div>
+      <div class="btton ">
+        <button id="startButton" class="btn btn-primary " [disabled]="selectedOption !== 'manual'"
+          [routerLink]="['/house/prob']">
+          ابدأ الآن
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

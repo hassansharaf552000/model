@@ -1,0 +1,31 @@
+<div class="container text-center mt-5 p-3">
+  <!-- Sending State -->
+  @if (sending && !success) {
+  <div class="mt-5">
+    <h2 class="mb-3">جاري إرسال رسالتك الأسكانية</h2>
+    <p class="text-muted">الرجاء الإنتظار بعض الدقائق فقط</p>
+    <div class="loading-icon my-5">
+      <img src="Ellipse 120.png" alt="إرسال" class="paper-plane">
+    </div>
+    <div class="progress mt-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="progress"
+        aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p class="mt-3">{{progress}}/100 جاري الإرسال</p>
+  </div>
+  }
+
+  <!-- Success State -->
+  @if (success && !sending) {
+  <div>
+    <h2 class="mb-3">تم إرسال رسالتك بنجاح</h2>
+    <p class="text-muted">الرجاء الإنتظار بعض الدقائق فقط</p>
+    <div class="success-icon my-5">
+      <img src="done.png" alt="نجاح" class="success-check">
+    </div>
+    <button class="btn btn-primary" (click)="exit()" [routerLink]="['/']">
+      خروج
+    </button>
+  </div>
+  }
+</div>
